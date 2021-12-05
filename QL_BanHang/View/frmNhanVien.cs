@@ -97,6 +97,7 @@ namespace QL_BanHang.View
 
         private void btnThem_Click(object sender, EventArgs e)
         {
+            txtMa.ReadOnly = false;
             flagLuu = 0;
             clearData();
             DisEnl(true);
@@ -117,6 +118,7 @@ namespace QL_BanHang.View
 
         private void btnSua_Click(object sender, EventArgs e)
         {
+            txtMa.ReadOnly = true;
             flagLuu = 1;
             DisEnl(true);
             loadCMB();
@@ -152,10 +154,30 @@ namespace QL_BanHang.View
                 return;
         }
 
-        
+        /// <summary>
+        /// Process searching employee
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnTimKiem_Click(object sender, EventArgs e)
+        {
+            // Lấy data từ textbox search input
+            string searhInput = tbSearchInput.Text;
 
-        
+            // Call SearchEmployee function từ class NhanVienMod và gán lại giá trị cho datatable trên form hiện tại
+            DataTable searchResult = nvCtr.SearchEployee(searhInput);
 
-      
+            // Kiểm tra xem có nhân viên nào được tìm thấy không, nếu không thì hiển thị thông báo không tìm thấy tới user
+            if (searchResult == null || searchResult.Rows.Count == 0)
+            {
+                MessageBox.Show("Không tìm thấy nhân viên nào!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }    
+            // Nếu có, Load data table mới lên view
+            else
+            {
+                dtgvDS.DataSource = searchResult;
+                binhding();
+            }
+        }
     }
 }

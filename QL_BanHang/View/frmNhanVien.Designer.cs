@@ -47,7 +47,7 @@
             this.btnSua = new System.Windows.Forms.Button();
             this.btnLuu = new System.Windows.Forms.Button();
             this.btnHuy = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tbSearchInput = new System.Windows.Forms.TextBox();
             this.btnTimKiem = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dtgvDS = new System.Windows.Forms.DataGridView();
@@ -98,7 +98,6 @@
             this.txtSDT.Name = "txtSDT";
             this.txtSDT.Size = new System.Drawing.Size(208, 26);
             this.txtSDT.TabIndex = 4;
-
             // 
             // label1
             // 
@@ -289,12 +288,12 @@
             this.btnHuy.UseVisualStyleBackColor = false;
             this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
             // 
-            // textBox1
+            // tbSearchInput
             // 
-            this.textBox1.Location = new System.Drawing.Point(561, 101);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(213, 26);
-            this.textBox1.TabIndex = 4;
+            this.tbSearchInput.Location = new System.Drawing.Point(561, 101);
+            this.tbSearchInput.Name = "tbSearchInput";
+            this.tbSearchInput.Size = new System.Drawing.Size(213, 26);
+            this.tbSearchInput.TabIndex = 4;
             // 
             // btnTimKiem
             // 
@@ -308,6 +307,7 @@
             this.btnTimKiem.Text = "Tìm kiếm";
             this.btnTimKiem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnTimKiem.UseVisualStyleBackColor = false;
+            this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
             // 
             // groupBox2
             // 
@@ -409,7 +409,7 @@
             this.BackColor = System.Drawing.Color.LightBlue;
             this.ClientSize = new System.Drawing.Size(1129, 534);
             this.Controls.Add(this.btnTimKiem);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.tbSearchInput);
             this.Controls.Add(this.btnHuy);
             this.Controls.Add(this.btnLuu);
             this.Controls.Add(this.groupBox2);
@@ -452,7 +452,7 @@
         private System.Windows.Forms.Button btnHuy;
         private System.Windows.Forms.DateTimePicker dpNamSinh;
         private System.Windows.Forms.ComboBox cmbGioiTinh;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tbSearchInput;
         private System.Windows.Forms.Button btnTimKiem;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.DataGridView dtgvDS;

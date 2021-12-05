@@ -35,7 +35,8 @@ namespace QL_BanHang.Model
         #region Contrustor
         public ConnectToSQL()
         {
-            StrCon = @"Data Source=DESKTOP-6UJDH0N\SQLEXPRESS2012;Initial Catalog=QLCH_BAN_XE1;Integrated Security=True";
+            //StrCon = @"Data Source=DESKTOP-6UJDH0N\SQLEXPRESS2012;Initial Catalog=QLCH_BAN_XE;Integrated Security=True";
+            StrCon = @"Data Source=SKY-20211015APB\SQLEXPRESS;Initial Catalog=QLCH_BANXE;Integrated Security=True";
             Conn = new SqlConnection(StrCon);
         }
         #endregion

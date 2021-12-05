@@ -31,5 +31,15 @@ namespace QL_BanHang.Control
         {
             return nvMod.DelData(ma);
         }
+
+        /// <summary>
+        /// Tìm kiếm nhân viên theo tên
+        /// </summary>
+        /// <param name="searchInput"></param>
+        /// <returns></returns>
+        public DataTable SearchEployee(string searchInput)
+        {
+            return nvMod.SearchEmployee(searchInput);
+        }
     }
 }

@@ -113,5 +113,32 @@ namespace QL_BanHang.Model
             }
             return false;
         }
+
+        /// <summary>
+        /// Tìm kiếm nhân viên theo tên.
+        /// </summary>
+        /// <param name="searchInput"></param>
+        /// <returns></returns>
+        public DataTable SearchEmployee(string searchInput)
+        {
+            DataTable result = new DataTable();
+            cmd = new SqlCommand();
+            cmd.CommandText = $"SELECT MaNV, TenNV, GioiTinh, NamSinh, DiaChi, SDT FROM tb_NhanVien WHERE TenNV Like '%{searchInput}%'";
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = con.Connection;
+            try
+            {
+                con.OpenConn();
+                SqlDataAdapter sda = new SqlDataAdapter(cmd);
+                sda.Fill(result);
+            }
+            catch (Exception ex)
+            {
+                cmd.Dispose();
+                con.CloseConn();
+                throw ex;
+            }
+            return result;
+        }
     }
 }

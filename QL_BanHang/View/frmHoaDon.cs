@@ -114,7 +114,7 @@ namespace QL_BanHang.View
         {
             hdObj.MaHoaDon = txtMa.Text.Trim();
             hdObj.NgayLap = txtNgayLap.Text.Trim();
-            hdObj.NguoiLap = cmbNhanVien.Text.Trim();
+            hdObj.NguoiLap = cmbNhanVien.SelectedValue.ToString();
             hdObj.KhachHang = cmbKhachHang.SelectedValue.ToString();
         }
 
